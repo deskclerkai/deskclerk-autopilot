@@ -58,7 +58,7 @@ Fork the repository on GitHub, then:
 ```bash
 git clone https://github.com/<your-account>/deskclerk-autopilot.git
 cd deskclerk-autopilot
-git remote add upstream https://github.com/jovian6661/deskclerk-autopilot.git
+git remote add upstream https://github.com/deskclerkai/deskclerk-autopilot.git
 git checkout -b fix/pool-protection-period
 ```
 

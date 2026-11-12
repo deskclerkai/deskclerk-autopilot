@@ -178,7 +178,7 @@
 要求：Python 3.9+、git。
 
 ```bash
-git clone https://github.com/jovian6661/deskclerk-autopilot.git
+git clone https://github.com/deskclerkai/deskclerk-autopilot.git
 cd deskclerk-autopilot
 
 python3 -m venv .venv

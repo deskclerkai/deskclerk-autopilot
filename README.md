@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jovian6661/deskclerk-autopilot/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/jovian6661/deskclerk-autopilot/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/deskclerkai/deskclerk-autopilot/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/deskclerkai/deskclerk-autopilot/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
   <a href="https://www.python.org/"><img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-3776AB.svg"></a>
   <a href="Dockerfile"><img alt="Docker ready" src="https://img.shields.io/badge/Docker-ready-2496ED.svg"></a>
-  <a href="https://github.com/jovian6661/deskclerk-autopilot/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/jovian6661/deskclerk-autopilot?include_prereleases&sort=semver"></a>
+  <a href="https://github.com/deskclerkai/deskclerk-autopilot/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/deskclerkai/deskclerk-autopilot?include_prereleases&sort=semver"></a>
   <a href="https://deskclerkai.com/?utm_source=github&utm_medium=readme&utm_campaign=ai_badge"><img alt="AI knowledge base: DeskClerk AI" src="https://img.shields.io/badge/AI%20knowledge%20base-DeskClerk%20AI-0F6E68.svg"></a>
   <a href="SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-policy-blueviolet.svg"></a>
   <a href="CODE_OF_CONDUCT.md"><img alt="Contributor Covenant 2.1" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg"></a>
@@ -249,7 +249,7 @@ FastAPI  ──►  SQLite (WAL)
 Requirements: Python 3.9+ and `git`.
 
 ```bash
-git clone https://github.com/jovian6661/deskclerk-autopilot.git
+git clone https://github.com/deskclerkai/deskclerk-autopilot.git
 cd deskclerk-autopilot
 
 python3 -m venv .venv

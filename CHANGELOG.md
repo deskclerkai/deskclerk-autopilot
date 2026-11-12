@@ -33,5 +33,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Production startup guard for `APP_SECRET`.
 - No telemetry sent to the maintainers.
 
-[Unreleased]: https://github.com/jovian6661/deskclerk-autopilot/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/jovian6661/deskclerk-autopilot/releases/tag/v0.1.0
+[Unreleased]: https://github.com/deskclerkai/deskclerk-autopilot/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/deskclerkai/deskclerk-autopilot/releases/tag/v0.1.0

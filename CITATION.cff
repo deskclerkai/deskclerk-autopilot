@@ -6,8 +6,8 @@ type: software
 version: "0.1.0"
 date-released: "2026-11-12"
 license: "Apache-2.0"
-repository-code: "https://github.com/jovian6661/deskclerk-autopilot"
-url: "https://github.com/jovian6661/deskclerk-autopilot"
+repository-code: "https://github.com/deskclerkai/deskclerk-autopilot"
+url: "https://github.com/deskclerkai/deskclerk-autopilot"
 authors:
   - name: "DeskClerk AI"
 keywords:
