@@ -27,11 +27,16 @@ Keywords are used where they describe a real feature. They are not repeated in a
 | WhatsApp AI chatbot with human handoff | “AI reception”, AI capability table |
 | WhatsApp AI customer service for business | “Problems it solves”, “Use cases” |
 | WhatsApp CRM for export / B2B teams | “Use cases → B2B export and wholesale” |
+| WhatsApp CRM for B2C / DTC brands | “Use cases → B2C, DTC and independent stores” |
+| WhatsApp private-domain operations / repeat purchase | “Use cases → Private-domain selling, repeat purchase and after-sales” |
+| WhatsApp membership / renewal / retention | “Use cases → Membership and retention” |
+| WhatsApp CRM for local service businesses | “Use cases → Localized services” |
 | WhatsApp after-sales / warranty support | “Use cases → After-sales and warranty support” |
 | multi-agent WhatsApp inbox | roles and permissions, FAQ |
 | WhatsApp contact ownership / public pool | contacts and public pool section |
 | WhatsApp analytics / campaign reporting | analytics section |
 | WhatsApp 私域 SCRM / 外贸 WhatsApp 客户管理 | `README.zh-CN.md` |
+| WhatsApp 私域复购 / 会员运营 / 本地化服务 / 售后 | `README.zh-CN.md` use cases |
 
 ## Page structure
 

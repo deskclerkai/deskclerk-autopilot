@@ -47,6 +47,10 @@ Common searches this project answers:
 - WhatsApp Cloud API CRM / shared inbox
 - self-hosted WhatsApp customer service system
 - WhatsApp AI chatbot with human handoff
+- private-domain WhatsApp operations, retention and repeat purchase
+- B2B and B2C WhatsApp CRM
+- WhatsApp membership, renewal and after-sales service
+- WhatsApp CRM for local service businesses
 - multi-agent WhatsApp inbox
 - WhatsApp contact ownership and public pool
 
@@ -62,8 +66,11 @@ Common searches this project answers:
 
 ## Who it is for
 
-- Teams of 3–50 people sharing one or more company WhatsApp numbers.
-- Businesses that need contact ownership, handover, a public pool and team-level permissions.
+- **B2B teams** sharing company WhatsApp numbers for export, wholesale, distribution or long sales cycles.
+- **B2C and DTC brands** using WhatsApp for pre-sales, orders, delivery questions and repeat purchase.
+- **Local service businesses** coordinating delivery, installation, maintenance and warranty conversations.
+- **Membership and retention teams** managing renewals, repeat purchase and high-value customer follow-up.
+- Teams that need contact ownership, handover, a public pool and team-level permissions.
 - Teams that want AI for repetitive questions but require a human handoff for price, delivery, legal or complaint topics.
 - Operators who want their customer data in their own database, not locked inside a personal phone.
 
@@ -92,14 +99,17 @@ Most teams do not start by searching for a “CRM”. They start with a mess: cu
 
 ## Use cases
 
-The same workflow fits different sales motions. These are the most common deployments.
+“Private domain” means the customer relationship belongs to you: the contact list, the conversation history and the follow-up are yours, not rented from an ad platform or locked inside an employee's phone. The same workflow fits B2B, B2C, local services, membership retention and after-sales, but the operating motion is different.
 
 | Scenario | Typical flow | What the system handles |
 |---|---|---|
-| **B2B export and wholesale** | Trade show or website lead → qualification → quotation → sample → order | Country/tag segments, owner assignment, follow-up segments, public pool, deal stages |
-| **DTC and independent stores** | Ad or website click → WhatsApp question → product recommendation → order → after-sales | Source tracking, fast replies, AI FAQ, handoff for price and delivery questions |
-| **Trade shows and field sales** | QR code or business card → many new contacts in a few days → follow-up over weeks | Bulk import, tag by event, claim quotas, protection period, reminder segments |
+| **B2B export and wholesale** | Trade show or website lead → qualification → quotation → sample → repeat order | Country/tag segments, owner assignment, follow-up segments, public pool, deal stages |
+| **B2C, DTC and independent stores** | Ad or website click → WhatsApp question → product recommendation → order → repeat purchase | Source tracking, fast replies, AI FAQ, handoff for price and delivery questions |
+| **Private-domain selling and repeat purchase** | First order → tag and segment → service follow-up → reactivation → second order | Customer ownership, lifecycle segments, opt-in campaigns, after-sales conversations |
+| **Membership and retention** | Member joins → tier/tag → renewal or repurchase reminder → support → referral | Tags, stages, segments, owner assignment, AI support, campaign eligibility |
+| **Localized services** | Local inquiry → site/visit coordination → delivery or installation → maintenance | Country/city tags, local-language AI, conversation ownership, warranty follow-up |
 | **After-sales and warranty** | Customer reports a problem → troubleshooting → replacement or repair | Support number, AI knowledge base, complaint escalation, conversation ownership |
+| **Trade shows and field sales** | QR code or business card → many new contacts in a few days → follow-up over weeks | Bulk import, tag by event, claim quotas, protection period, reminder segments |
 | **Education and training** | Inquiry → trial class → enrollment → renewal | Stage pipeline, counselor ownership, segment-based follow-up, multilingual AI |
 | **Multi-brand or multi-number teams** | Several countries or product lines, each with its own number and team | Number → reception team → person permissions, per-number analytics |
 | **Agencies and managed deployments** | One deployment per client, operated by an agency | Single-tenant isolation, branding policy, backup and audit trail |
@@ -108,9 +118,50 @@ The same workflow fits different sales motions. These are the most common deploy
 
 A typical export team collects leads from trade shows, referrals and a website, then follows up for weeks or months. The hard part is not the first message; it is remembering who owns each lead, which country and product they asked about, and when to follow up again. The system keeps that context in the contact record, assigns an owner, and builds segments such as “UAE leads, no contact for 30 days”.
 
-### DTC and independent-store pre-sales
+### B2C, DTC and independent stores
 
 A shopper messages the brand on WhatsApp before buying. Speed matters, but price, stock and delivery answers must be accurate. AI can answer repeated questions from the knowledge base and hand price or delivery commitments to a human. The source field shows whether the conversation started from the website, Instagram, Facebook or ads.
+
+### Private-domain selling, repeat purchase and after-sales
+
+This is the core private-domain loop:
+
+```text
+Acquire → first order → tag and segment → service follow-up
+        → reactivation campaign → repeat order → after-sales → referral
+```
+
+The system supports the loop with:
+
+- **Ownership**: every customer has an owner, so a repeat buyer does not disappear when a salesperson leaves.
+- **Lifecycle segments**: Active, 30/90/180-day dormant, plus custom rules such as “bought product A, no contact for 60 days”.
+- **Consent-aware campaigns**: the repeat-purchase message only goes to opted-in, non-opted-out customers.
+- **After-sales continuity**: the same conversation history is available when the customer comes back with a problem.
+- **AI for repetitive service**: order status, usage questions and spare-part questions can be answered from the knowledge base; complaints go to a human.
+
+### Membership and retention
+
+Membership does not have to mean a points wallet. In this system, membership-style retention is built from **tags, deal stages, segments and ownership**:
+
+- tag members by tier, product, language or renewal month;
+- segment members who are due for renewal or have gone quiet;
+- assign a named owner to high-value members;
+- send opt-in renewal reminders through an approved template;
+- let AI handle routine member questions and hand exceptions to the owner.
+
+There is no built-in points ledger or stored-value wallet. If you need one, integrate it through your own system rather than expecting this repository to be an e-commerce platform.
+
+### Localized services
+
+Local service businesses use WhatsApp for inquiries, delivery coordination, installation, maintenance and warranty. The system handles the conversation layer:
+
+- country/city and service-type tags;
+- local-language AI personas and knowledge;
+- a named owner for each customer;
+- follow-up segments for installation, maintenance and warranty dates;
+- conversation history when the customer returns months later.
+
+It does not include field-service dispatch, route planning or a technician mobile app. Those belong to a separate operations system.
 
 ### After-sales and warranty support
 
