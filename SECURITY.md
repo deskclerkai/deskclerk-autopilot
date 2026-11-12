@@ -2,6 +2,11 @@
 
 ## Supported versions
 
+| Version | Supported |
+|---|---|
+| `0.1.x` | Yes |
+| Earlier pre-release snapshots | No |
+
 Security fixes are applied to the latest release on the default branch.
 
 ## Reporting a vulnerability

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this project in research or a published deployment, please cite it."
+title: "DeskClerk AI Autopilot"
+abstract: "An open-source, self-hosted WhatsApp CRM and shared inbox with contact ownership, public-pool rules, campaigns and AI reception with human handoff."
+type: software
+version: "0.1.0"
+date-released: "2026-11-12"
+license: "Apache-2.0"
+repository-code: "https://github.com/jovian6661/deskclerk-autopilot"
+url: "https://github.com/jovian6661/deskclerk-autopilot"
+authors:
+  - name: "DeskClerk AI"
+keywords:
+  - whatsapp
+  - whatsapp-cloud-api
+  - crm
+  - shared-inbox
+  - customer-support
+  - self-hosted
+  - ai

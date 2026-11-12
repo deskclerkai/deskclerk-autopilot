@@ -51,7 +51,13 @@ The tests create their own temporary databases and servers. They do not touch `d
 - Describe the problem, the approach and how you tested it.
 - Include a test for behavior changes when practical.
 - Update the relevant file in `docs/` when a rule, field, endpoint or permission changes.
+- Follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- For larger changes, read [GOVERNANCE.md](GOVERNANCE.md) and open an issue first.
+
+## Commit messages
+
+Use a short imperative subject line, then explain the why in the body when it is not obvious. Do not include secrets, customer data or generated databases.
 
 ## License
 
-By contributing, you agree that your contribution is licensed under the Apache License 2.0.
+By contributing, you agree that your contribution is licensed under the Apache License 2.0. Brand use is governed by [TRADEMARK.md](TRADEMARK.md).
