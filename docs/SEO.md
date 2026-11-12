@@ -77,6 +77,8 @@ It must be **checked**. If it is unchecked, Google and Bing are told not to inde
 
 Only a repository admin can see and change this setting.
 
+On some GitHub accounts or UI versions, this checkbox is not shown at all. In that case public repositories are indexed by default, and the practical check is the `noindex` test below: if no `noindex` directive appears on the public page, external indexing is allowed.
+
 ### 2. Public visibility, not archived, not disabled
 
 - repository visibility is `Public`;
