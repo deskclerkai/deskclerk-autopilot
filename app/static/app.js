@@ -244,7 +244,7 @@ async function renderConv(id) {
         🔒 ${T('This conversation belongs to ', '这条会话归 ')}<b>${esc(c.owner_name || '')}</b>${T('. Only they can reply; ask a manager to hand it over.', ' 负责，只有 TA 能回复；需要接手请让主管转给你。')}</div>`
     : `<textarea class="inp" id="replyBox" placeholder="${data.window_open ? T('Type a reply…', '输入回复…') : T('Window closed — pick an approved template', '窗口已关闭，请选择已审模板')}"></textarea>
       <div style="display:flex;gap:8px;margin-top:10px">
-        <span class="btn sm" onclick="simulateInbound(${id})">${T('Simulate inbound', '模拟来信')}</span>
+        <span class="btn sm" onclick="simulateInbound(${id})">${T('Test inbound', '测试来信')}</span>
         <span class="btn sm" onclick="aiDraft(${id})">${T('AI draft', 'AI 起草')}</span>
         <span class="btn sm" onclick="go('templates')">${T('Insert template', '插入模板')}</span>
         <span style="margin-left:auto" class="btn sm gold" onclick="sendMsg(${id})">${T('Send', '发送')}</span>
@@ -952,7 +952,7 @@ window.createCampaign = async () => {
   try {
     const r = await api('/api/campaigns', { method: 'POST', body: JSON.stringify({
       segment_id: +$('cpSeg').value, template_id: +$('cpTpl').value, name: $('cpName').value || undefined }) });
-    toast(T(`Queued to ${r.sent} contacts (sandbox)`, `已入队 ${r.sent} 人（沙盒）`));
+    toast(T(`Queued to ${r.sent} contacts (not sent yet)`, `已入队 ${r.sent} 人（尚未真实发送）`));
     CACHE.useTpl = null; viewCampaigns();
   } catch (e) { toast(e.message); }
 };
@@ -1680,8 +1680,15 @@ function settingsPanel(s, users) {
               <div class="inp" style="width:100%">${esc(wa.waba_id || T('Not set', '未设置'))}</div></div>
             <div class="field"><label>${T('Access token', '访问令牌')}</label>
               <div class="inp" style="width:100%">${wa.token_set ? T('Saved (masked)', '已保存（打码）') : T('Not set', '未设置')}</div></div>
+            <div class="field"><label>${T('Webhook URL', 'Webhook 回调地址')}</label>
+              <div class="inp" style="width:100%">${esc(location.origin)}/webhook/whatsapp</div></div>
+            <div class="field"><label>${T('Verify token', '校验 token')}</label>
+              <input id="waVerify" class="inp" style="width:100%" placeholder="${wa.verify_token ? T('Saved (leave blank to keep)', '已保存（留空不改）') : T('Not set', '未设置')}" ${ro}></div>
+            <div class="field"><label>${T('App secret', '应用密钥')}</label>
+              <input id="waSecret" class="inp" style="width:100%" placeholder="${wa.app_secret ? T('Saved (leave blank to keep)', '已保存（留空不改）') : T('Not set', '未设置')}" ${ro}></div>
           </div>
-          ${ME.role === 'owner' ? `<span class="btn sm" onclick="setTab('numbers'); syncNumbersUI()">⟳ ${T('Sync numbers from Meta', '从 Meta 同步号码')}</span>` : ''}
+          ${ME.role === 'owner' ? `<span class="btn sm gold" onclick="saveWhatsApp()">${T('Save webhook settings', '保存 Webhook 设置')}</span>
+          <span class="btn sm" onclick="setTab('numbers'); syncNumbersUI()">⟳ ${T('Sync numbers from Meta', '从 Meta 同步号码')}</span>` : ''}
         </div>`; })()}
       ${Object.entries(ch).filter(([k]) => k !== 'whatsapp').map(([k, v]) => {
         const meta = CH_META[k] || [k, '', 'app_id'];
@@ -1926,6 +1933,18 @@ async function auditPanel() {
 }
 
 /* ---------- 动作 ---------- */
+window.saveWhatsApp = async () => {
+  const body = {};
+  const vt = ($('waVerify')?.value || '').trim();
+  const as = ($('waSecret')?.value || '').trim();
+  if (vt) body.verify_token = vt;
+  if (as) body.app_secret = as;
+  if (!Object.keys(body).length) return toast(T('Nothing to save', '没有可保存的内容'));
+  try {
+    await api('/api/settings/channels', { method: 'PATCH', body: JSON.stringify({ whatsapp: body }) });
+    toast(T('Saved', '已保存')); viewSettings();
+  } catch (e) { toast(e.message); }
+};
 window.saveChannel = async (key) => {
   const body = {}; body[key] = {
     app_id: $('ch_' + key + '_id').value, url: $('ch_' + key + '_id').value,
@@ -1947,7 +1966,7 @@ window.syncTemplates = async () => {
     : e.message); }
 };
 window.simulateInbound = async (cid) => {
-  const text = prompt(T('Simulate an inbound WhatsApp message:', '模拟客户发来一条消息：'), 'STOP');
+  const text = prompt(T('Send a test inbound message:', '测试：客户发来一条消息：'), 'STOP');
   if (!text) return;
   const r = await api(`/api/conversations/${cid}/simulate-inbound`, { method: 'POST', body: JSON.stringify({ body: text }) });
   toast(r.opt_out_triggered ? T('Contact opted out automatically', '已自动标记退订') : T('Message received', '已收到消息'));
