@@ -15,7 +15,8 @@
   <a href="#应用场景">应用场景</a> ·
   <a href="#ai-能力">AI 能力</a> ·
   <a href="#快速开始">快速开始</a> ·
-  <a href="docs/">文档</a>
+  <a href="docs/">文档</a> ·
+  <a href="https://deskclerkai.com/?utm_source=github&utm_medium=readme_zh&utm_campaign=ai_badge">DeskClerk AI 知识库</a>
 </p>
 
 > 本项目是独立开源项目，与 WhatsApp / Meta 没有隶属、背书或赞助关系。WhatsApp 是 Meta Platforms, Inc. 的商标。

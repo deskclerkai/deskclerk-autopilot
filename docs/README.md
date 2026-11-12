@@ -37,6 +37,8 @@ Start with the [project README](../README.md). These documents go deeper into th
 
 - [Security policy](../SECURITY.md)
 - [Contributing](../CONTRIBUTING.md)
+- [Contribution workflow](CONTRIBUTING-WORKFLOW.md)
+- [Releasing](RELEASING.md)
 - [Governance](../GOVERNANCE.md)
 - [Trademark and brand](../TRADEMARK.md)
 - [Changelog](../CHANGELOG.md)

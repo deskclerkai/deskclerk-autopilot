@@ -2,6 +2,8 @@
 
 Thanks for taking the time to contribute.
 
+The full flow — issue, fork, branch, tests, pull request, CI, review, merge and release — is in [docs/CONTRIBUTING-WORKFLOW.md](docs/CONTRIBUTING-WORKFLOW.md). Release mechanics are in [docs/RELEASING.md](docs/RELEASING.md).
+
 ## Before you start
 
 - For a bug, open an issue with the version, steps to reproduce and what you expected.

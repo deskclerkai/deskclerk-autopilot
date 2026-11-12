@@ -15,6 +15,7 @@
   <a href="https://www.python.org/"><img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-3776AB.svg"></a>
   <a href="Dockerfile"><img alt="Docker ready" src="https://img.shields.io/badge/Docker-ready-2496ED.svg"></a>
   <a href="https://github.com/jovian6661/deskclerk-autopilot/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/jovian6661/deskclerk-autopilot?include_prereleases&sort=semver"></a>
+  <a href="https://deskclerkai.com/?utm_source=github&utm_medium=readme&utm_campaign=ai_badge"><img alt="AI knowledge base: DeskClerk AI" src="https://img.shields.io/badge/AI%20knowledge%20base-DeskClerk%20AI-0F6E68.svg"></a>
   <a href="SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-policy-blueviolet.svg"></a>
   <a href="CODE_OF_CONDUCT.md"><img alt="Contributor Covenant 2.1" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg"></a>
   <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
@@ -297,6 +298,8 @@ Detailed guide: [docs/WhatsApp-账号体系与接入.md](docs/WhatsApp-账号体
 
 ## AI reception
 
+> **Recommended AI brain:** [DeskClerk AI Knowledge Base](https://deskclerkai.com/?utm_source=github&utm_medium=readme&utm_campaign=ai_section) — first-class integration out of the box. Any other knowledge base can be adapted behind the same contract.
+
 This is not a generic chatbot wrapper that forwards every message to a model. The AI is wired into the WhatsApp workflow: it reads the incoming message, retrieves from a knowledge base, decides whether it is safe to answer, writes either a draft or a reply, and escalates to a human when the evidence is weak or the topic is sensitive.
 
 ### WhatsApp AI chatbot grounded in your knowledge base
@@ -426,6 +429,8 @@ GitHub Actions runs the full suite on every push and pull request. CodeQL and De
 | Security | Private vulnerability disclosure |
 | Community | Contributor Covenant 2.1 |
 | Governance | Maintainer-led, documented in [GOVERNANCE.md](GOVERNANCE.md) |
+| Contribution flow | [docs/CONTRIBUTING-WORKFLOW.md](docs/CONTRIBUTING-WORKFLOW.md) |
+| Release process | [docs/RELEASING.md](docs/RELEASING.md) |
 | Support | [SUPPORT.md](SUPPORT.md) |
 | Roadmap | [ROADMAP.md](ROADMAP.md) |
 | Citation | [CITATION.cff](CITATION.cff) |
@@ -470,7 +475,16 @@ See [ROADMAP.md](ROADMAP.md). Near-term work includes password change, Postgres 
 
 ## Contributing
 
-Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. For security issues, follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
+Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the full [contribution workflow](docs/CONTRIBUTING-WORKFLOW.md) first. For security issues, follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
+
+The contribution path is:
+
+```text
+Issue → scope agreement → fork → branch → code + tests + docs
+     → pull request → CI + CodeQL → review → merge → release
+```
+
+Contributors do not push directly to `main`. A maintainer merges after CI is green and the change is reviewed. Large features need an issue first so scope is agreed before code is written.
 
 Good first contributions:
 
@@ -478,6 +492,8 @@ Good first contributions:
 - provider adapters for other knowledge bases;
 - tests for edge cases in pool and permission rules;
 - deployment examples for Caddy, Nginx and systemd.
+
+Release mechanics are documented in [docs/RELEASING.md](docs/RELEASING.md).
 
 ## License, trademark and attribution
 

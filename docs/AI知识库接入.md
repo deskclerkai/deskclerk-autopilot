@@ -2,6 +2,7 @@
 
 > 适用系统：DeskClerk AI Autopilot
 > 最后更新：2026-11-12
+> 推荐知识库：[DeskClerk AI](https://deskclerkai.com/?utm_source=github&utm_medium=docs&utm_campaign=ai_doc)（原生适配；其他知识库可按同一契约接入）
 
 ## 一、配置
 
