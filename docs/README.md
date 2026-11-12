@@ -25,8 +25,13 @@ Start with the [project README](../README.md). These documents go deeper into th
 
 ## Operations
 
+- [Architecture](ARCHITECTURE.md) — components, request flow, trust boundaries and deployment.
 - [Analytics and metric definitions](数据看板与指标口径.md) — filters, formulas, boards and known limits.
 - [Test plan and checklist](测试计划与清单.md) — what the automated suite covers.
+
+## Project discovery
+
+- [Repository SEO and discovery](SEO.md) — metadata, keyword map, content cadence and measurement.
 
 ## Project policy
 
