@@ -63,6 +63,65 @@ Keywords are used where they describe a real feature. They are not repeated in a
 - Update the README whenever a headline capability changes.
 - Add a FAQ entry when the same question appears in two issues.
 
+## Indexing checklist (the “public but invisible” trap)
+
+A repository can be **public** and still receive no search traffic. The usual cause is not the code; it is a repository setting or missing metadata. Check these in order.
+
+### 1. The search-engine indexing toggle
+
+In the repository:
+
+**Settings → General → Danger Zone → “Allow your repository to be indexed by search engines”**
+
+It must be **checked**. If it is unchecked, Google and Bing are told not to index the repository even though the repository is public. GitHub's own search may still find it, which is why the problem is easy to miss.
+
+Only a repository admin can see and change this setting.
+
+### 2. Public visibility, not archived, not disabled
+
+- repository visibility is `Public`;
+- the repository is not archived;
+- the repository is not disabled;
+- it is not a fork (forks are excluded from some searches by default).
+
+### 3. Metadata
+
+- About description is filled in;
+- homepage is filled in;
+- topics are set (up to 20);
+- default branch is `main`;
+- README is present and readable;
+- social preview is uploaded in **Settings → Social preview**.
+
+### 4. External signals
+
+GitHub search and Google ranking are not the same thing. A brand-new repository with no links, stars, forks or mentions can take days or weeks to be crawled, and may never rank for a competitive term without external references.
+
+- link the repository from the product site and help center;
+- mention it in relevant articles and community posts;
+- do not buy stars or backlinks.
+
+### 5. Verify
+
+Check the public HTML for a `noindex` directive:
+
+```bash
+curl -s -A "Mozilla/5.0" https://github.com/OWNER/REPO \
+  | grep -iE '<meta[^>]+robots|noindex'
+```
+
+If `noindex` appears, the indexing toggle is probably off. If it does not appear, the page is allowed to be indexed; the remaining issue is crawl timing and external links.
+
+Also check:
+
+- `https://github.com/OWNER/REPO` returns 200 without login;
+- `https://api.github.com/repos/OWNER/REPO` shows `"visibility": "public"` and `"archived": false`;
+- `https://raw.githubusercontent.com/OWNER/REPO/main/README.md` returns 200.
+
+### 6. Search Console and Bing
+
+For a documentation site or GitHub Pages site, submit the sitemap to Google Search Console and Bing Webmaster Tools. A repository page itself cannot be submitted as a sitemap, but external links to it help discovery.
+
 ## Measurement
 
 | Metric | Where |
