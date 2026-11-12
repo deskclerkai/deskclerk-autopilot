@@ -167,7 +167,16 @@ Maintainers follow [RELEASING.md](RELEASING.md):
 | `dependencies` | dependency update |
 | `ci` | workflow or tooling |
 
-## 11. What maintainers do
+## 11. Branch protection
+
+`main` is protected on GitHub:
+
+- changes go through a pull request;
+- the `test` status check must pass;
+- force pushes and branch deletion are blocked;
+- maintainers can bypass in an emergency, but should not use that for normal work.
+
+## 12. What maintainers do
 
 - Triage issues and label them.
 - Confirm scope before large work.
@@ -176,7 +185,7 @@ Maintainers follow [RELEASING.md](RELEASING.md):
 - Protect secrets and customer data.
 - Follow [GOVERNANCE.md](../GOVERNANCE.md).
 
-## 12. What contributors should not do
+## 13. What contributors should not do
 
 - Do not push directly to `main`; use a pull request.
 - Do not include real customer data or API keys.
