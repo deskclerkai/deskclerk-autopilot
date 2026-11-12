@@ -10,7 +10,7 @@ This is the maintenance standard for the public repository. It keeps the project
 | Description | `Open-source WhatsApp AI operations desk. Bring your own knowledge base.` |
 | Homepage | `https://deskclerkai.com` |
 | Topics | `whatsapp`, `whatsapp-cloud-api`, `whatsapp-business`, `crm`, `shared-inbox`, `customer-support`, `customer-engagement`, `ai`, `ai-customer-service`, `chatbot`, `self-hosted`, `docker`, `fastapi`, `sqlite`, `python`, `javascript`, `open-source`, `whatsapp-automation`, `multi-agent`, `contact-management` |
-| Social preview | `docs/assets/social-preview.png` (upload in repository settings) |
+| Social preview | `docs/assets/social-preview.png` (uploaded in repository settings) |
 | Default branch | `main` |
 | Chinese entry | `README.zh-CN.md` (linked from the English README) |
 
