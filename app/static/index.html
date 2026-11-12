@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeskClerk AI Autopilot</title>
+<link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/style.css?v=43">
+</head>
+<body>
+
+<div class="login" id="login">
+  <div class="box">
+    <img class="logo" src="/static/logo.svg" alt="DeskClerk AI">
+    <h1 id="loginTitle">DeskClerk AI Autopilot</h1>
+    <p id="loginSub">Sign in to continue</p>
+    <input id="email" type="email" placeholder="Email" autocomplete="username">
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+    <div class="err" id="err"></div>
+    <button id="doLogin">Sign in</button>
+    <div class="hint" id="loginHint"></div>
+    <div class="hint" id="aiBrandLine" style="margin-top:8px">AI 能力由 <a href="https://deskclerkai.com" target="_blank" rel="noopener">DeskClerk AI</a> 提供 · 了解知识库 →</div>
+  </div>
+</div>
+
+<div class="app" id="app" style="display:none">
+  <div class="rail" id="rail"></div>
+  <div class="main">
+    <div class="head">
+      <div><h1 id="hTitle">Inbox</h1><span class="sub" id="hSub"></span></div>
+      <div class="right">
+        <span class="pill" id="roleBtn"></span>
+        <span class="pill" id="sendStat"></span>
+        <span class="pill" id="newCampBtn"></span>
+        <span class="pill" id="langBtn">中文</span>
+        <div class="avatar" id="meAvatar">L</div>
+      </div>
+    </div>
+    <div class="body" id="body"></div>
+  </div>
+</div>
+
+<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="/static/app.js?v=43"></script>
+</body>
+</html>

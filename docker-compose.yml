@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: deskclerk-autopilot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      APP_SECRET: ${APP_SECRET:?set APP_SECRET in .env}
+      APP_ENV: ${APP_ENV:-production}
+      DEMO_SEED: ${DEMO_SEED:-0}
+      DB_PATH: /data/app.db
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
+    volumes:
+      - ./data:/data

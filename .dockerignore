@@ -1,0 +1,13 @@
+data/
+*.db
+*.db-wal
+*.db-shm
+.env
+.git/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+docs/
+*.md
+!README.md

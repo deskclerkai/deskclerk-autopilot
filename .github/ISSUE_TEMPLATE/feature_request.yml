@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest a capability or a change
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and where does the current system get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior you want, not necessarily the implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Inbox
+        - Contacts and segments
+        - Public pool
+        - Campaigns and templates
+        - Teams and permissions
+        - Numbers and WhatsApp integration
+        - AI reception
+        - Analytics
+        - Deployment
+        - Documentation
+        - Other
