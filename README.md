@@ -15,6 +15,8 @@
   <a href="https://www.python.org/"><img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-3776AB.svg"></a>
   <a href="Dockerfile"><img alt="Docker ready" src="https://img.shields.io/badge/Docker-ready-2496ED.svg"></a>
   <a href="https://github.com/jovian6661/deskclerk-autopilot/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/jovian6661/deskclerk-autopilot?include_prereleases&sort=semver"></a>
+  <a href="SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-policy-blueviolet.svg"></a>
+  <a href="CODE_OF_CONDUCT.md"><img alt="Contributor Covenant 2.1" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg"></a>
   <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
