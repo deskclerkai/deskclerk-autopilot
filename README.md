@@ -53,7 +53,7 @@ FastAPI  ──►  SQLite (WAL)
 ## Quickstart (local)
 
 ```bash
-git clone https://github.com/<your-org>/deskclerk-autopilot.git
+git clone https://github.com/jovian6661/deskclerk-autopilot.git
 cd deskclerk-autopilot
 
 python3 -m venv .venv
