@@ -12,6 +12,7 @@ This is the maintenance standard for the public repository. It keeps the project
 | Topics | `whatsapp`, `whatsapp-cloud-api`, `whatsapp-business`, `crm`, `shared-inbox`, `customer-support`, `customer-engagement`, `ai`, `ai-customer-service`, `chatbot`, `self-hosted`, `docker`, `fastapi`, `sqlite`, `python`, `javascript`, `open-source`, `whatsapp-automation`, `multi-agent`, `contact-management` |
 | Social preview | `docs/assets/social-preview.png` (upload in repository settings) |
 | Default branch | `main` |
+| Chinese entry | `README.zh-CN.md` (linked from the English README) |
 
 ## README keyword map
 
@@ -23,10 +24,14 @@ Keywords are used where they describe a real feature. They are not repeated in a
 | WhatsApp Cloud API CRM | “Official WhatsApp API only”, setup section |
 | WhatsApp shared inbox | “WhatsApp shared inbox” feature section |
 | self-hosted WhatsApp customer service | quickstart, Docker, architecture |
-| WhatsApp AI chatbot with human handoff | “AI reception with human handoff” |
+| WhatsApp AI chatbot with human handoff | “AI reception”, AI capability table |
+| WhatsApp AI customer service for business | “Problems it solves”, “Use cases” |
+| WhatsApp CRM for export / B2B teams | “Use cases → B2B export and wholesale” |
+| WhatsApp after-sales / warranty support | “Use cases → After-sales and warranty support” |
 | multi-agent WhatsApp inbox | roles and permissions, FAQ |
 | WhatsApp contact ownership / public pool | contacts and public pool section |
 | WhatsApp analytics / campaign reporting | analytics section |
+| WhatsApp 私域 SCRM / 外贸 WhatsApp 客户管理 | `README.zh-CN.md` |
 
 ## Page structure
 

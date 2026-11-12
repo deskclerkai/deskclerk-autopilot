@@ -22,12 +22,15 @@
 
 <p align="center">
   <a href="#quickstart">Quickstart</a> ·
+  <a href="#problems-it-solves">Problems</a> ·
+  <a href="#use-cases">Use cases</a> ·
   <a href="#features">Features</a> ·
   <a href="#screenshots">Screenshots</a> ·
   <a href="#connect-whatsapp-cloud-api">WhatsApp setup</a> ·
   <a href="#ai-reception">AI reception</a> ·
   <a href="#faq">FAQ</a> ·
-  <a href="docs/">Documentation</a>
+  <a href="docs/">Documentation</a> ·
+  <a href="README.zh-CN.md">中文说明</a>
 </p>
 
 > **Independent project.** This is not affiliated with, endorsed by, or sponsored by WhatsApp or Meta. WhatsApp is a trademark of Meta Platforms, Inc.
@@ -70,6 +73,48 @@ Common searches this project answers:
 - Teams looking for an unofficial WhatsApp gateway that bypasses Meta's API.
 - Businesses that need a fully managed SaaS with zero server involvement.
 - Multi-tenant resellers: this release is single-tenant by design.
+
+## Problems it solves
+
+Most teams do not start by searching for a “CRM”. They start with a mess: customers in personal phones, leads going cold, several people answering the same number, and no idea which campaign produced a deal. This project is built around those problems.
+
+| Problem | What it usually looks like | What this project does |
+|---|---|---|
+| Customer ownership | Customers live in a salesperson's personal WhatsApp; when they leave, the customers leave too | The company number and customer records stay in the company database; owner is a field, not a phone |
+| Shared number chaos | Several agents use one number and cannot see who replied | Shared inbox with assignment, ownership and owner-only reply mode |
+| Leads going cold | New leads are never assigned, or nobody notices a customer has gone quiet | Public pool, protection period, daily quota and lifecycle segments such as “no contact for 30 days” |
+| Duplicate or missed replies | Two people answer the same customer, or nobody answers | Conversation owner, unread counts, filters and a contact side panel with recent messages |
+| Unsafe mass messaging | The team exports a list and sends to everyone, including opted-out contacts | Opt-in checks, permanent opt-out, approved templates and the 24-hour service window |
+| No visibility | The owner sees activity but not conversion, response time or per-agent load | Twelve analytics boards by owner, team, number, country, tag, segment, stage and campaign |
+| AI that cannot be trusted | A chatbot invents prices, promises delivery dates or answers without evidence | Knowledge-grounded answers with citations, confidence scores, hard topic blocks and human handoff |
+| Staff turnover | Handover means screenshots and a new phone | Customer ownership transfer, conversation history and audit log stay in one place |
+| Multilingual customers | The team cannot staff every language at all hours | Per-language AI personas and locale-specific knowledge, with human fallback |
+
+## Use cases
+
+The same workflow fits different sales motions. These are the most common deployments.
+
+| Scenario | Typical flow | What the system handles |
+|---|---|---|
+| **B2B export and wholesale** | Trade show or website lead → qualification → quotation → sample → order | Country/tag segments, owner assignment, follow-up segments, public pool, deal stages |
+| **DTC and independent stores** | Ad or website click → WhatsApp question → product recommendation → order → after-sales | Source tracking, fast replies, AI FAQ, handoff for price and delivery questions |
+| **Trade shows and field sales** | QR code or business card → many new contacts in a few days → follow-up over weeks | Bulk import, tag by event, claim quotas, protection period, reminder segments |
+| **After-sales and warranty** | Customer reports a problem → troubleshooting → replacement or repair | Support number, AI knowledge base, complaint escalation, conversation ownership |
+| **Education and training** | Inquiry → trial class → enrollment → renewal | Stage pipeline, counselor ownership, segment-based follow-up, multilingual AI |
+| **Multi-brand or multi-number teams** | Several countries or product lines, each with its own number and team | Number → reception team → person permissions, per-number analytics |
+| **Agencies and managed deployments** | One deployment per client, operated by an agency | Single-tenant isolation, branding policy, backup and audit trail |
+
+### B2B export and wholesale teams
+
+A typical export team collects leads from trade shows, referrals and a website, then follows up for weeks or months. The hard part is not the first message; it is remembering who owns each lead, which country and product they asked about, and when to follow up again. The system keeps that context in the contact record, assigns an owner, and builds segments such as “UAE leads, no contact for 30 days”.
+
+### DTC and independent-store pre-sales
+
+A shopper messages the brand on WhatsApp before buying. Speed matters, but price, stock and delivery answers must be accurate. AI can answer repeated questions from the knowledge base and hand price or delivery commitments to a human. The source field shows whether the conversation started from the website, Instagram, Facebook or ads.
+
+### After-sales and warranty support
+
+Support conversations are repetitive but sensitive. The AI can handle troubleshooting steps and spare-part questions with citations, while complaints, refunds and legal topics are escalated with the full conversation context. A separate support number can be granted only to the after-sales team.
 
 ## Features
 
@@ -201,7 +246,60 @@ Detailed guide: [docs/WhatsApp-账号体系与接入.md](docs/WhatsApp-账号体
 
 ## AI reception
 
-AI is optional. The workflow is provider-agnostic, with first-class support for the **DeskClerk AI knowledge base**:
+This is not a generic chatbot wrapper that forwards every message to a model. The AI is wired into the WhatsApp workflow: it reads the incoming message, retrieves from a knowledge base, decides whether it is safe to answer, writes either a draft or a reply, and escalates to a human when the evidence is weak or the topic is sensitive.
+
+### WhatsApp AI chatbot grounded in your knowledge base
+
+| Capability | What it does | Why it matters |
+|---|---|---|
+| Grounded answers with citations | Each answer can carry the knowledge items and similarity scores used to produce it | Agents can see *why* the AI answered, not just *what* it said |
+| Confidence threshold | Answers below the configured score are treated as low-confidence | Weak answers become handoffs instead of guesses |
+| Three reception modes | Manual, AI draft and AI autopilot, switchable per workspace | Start safe, then automate only what proves reliable |
+| Hard topic blocking | Price, discount, delivery promises, contracts, legal and complaints are stopped before the model is called | Prevents the most expensive AI mistakes |
+| Per-conversation AI switch | Turn AI off for one customer without changing the workspace | Handles VIPs, negotiations and sensitive threads |
+| Human handoff with context | The conversation, the AI draft, the sources and the reason for escalation stay together | The human does not restart the conversation from zero |
+| Per-language personas | Separate persona, tone, company introduction and boundaries for each locale | One team can serve Arabic, English and Chinese customers |
+| AI customer insights | Auto tags, a short summary, next-action suggestion and risk flags on the contact card | Turns conversation content into a usable sales cue |
+| AI observability | Logs for question, answer, sources, score, decision and latency; auto/draft/handoff rates on the dashboard | You can measure quality instead of trusting a demo |
+| Provider-agnostic contract | DeskClerk first-class, other knowledge bases adaptable behind the same response shape | Avoids lock-in at the workflow layer |
+
+### How one AI turn works
+
+```text
+Customer message
+      │
+      ▼
+Safety check ──► blocked topic? ──► human handoff
+      │
+      ▼
+Knowledge-base retrieval
+      │
+      ├── no source / low score ──► human handoff
+      │
+      └── grounded answer
+              │
+              ├── manual mode: no AI action
+              ├── draft mode: draft waits for a human
+              └── autopilot mode: send automatically
+                        │
+                        ▼
+                 log sources, score, decision, latency
+```
+
+### Human handoff instead of blind automation
+
+The AI is designed to stop at the right moment:
+
+- customer asks for a price, discount or quote;
+- customer asks for a delivery commitment;
+- the topic is a contract, legal issue, claim or complaint;
+- the knowledge base has no matching source;
+- the best similarity score is below the threshold;
+- the customer explicitly asks for a human.
+
+In those cases the system records the escalation reason, keeps the retrieved sources and hands the conversation to the owner. The AI does not send an empty answer or invent a policy.
+
+### Set it up
 
 1. Create a site and an integration key in DeskClerk AI.
 2. Open the **AI assistant** page and fill in base URL, site ID and key.
